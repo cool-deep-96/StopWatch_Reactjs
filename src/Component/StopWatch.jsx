@@ -68,23 +68,23 @@ const StopWatch = () => {
 
 
                     <div className="flex flex-row my-6 lg:my-3 h-full  ">
-                        <div className="lg:w-36 w-28">
+                        <div className="lg:w-36 w-20">
                             <div className=" my-4 lg:m-2 bg-red-300 ">
                                 <button onClick={() => { start ? setPause(!pause) : setStart(!start) }}
-                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full">{start ? (pause ? 'Resume' : "Pause") : 'Start'}</button>
+                                    className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full">{start ? (pause ? 'Resume' : "Pause") : 'Start'}</button>
                             </div>
                             <div className=" my-4 lg:m-2  bg-red-300">
                                 <button onClick={()=>{addLapHandler()}}
-                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full">Lap</button>
+                                    className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full">Lap</button>
                             </div>
                             <div className="my-4 lg:m-2 bg-red-300">
                                 <button onClick={() => { setPause(false); setStart(false); setMilisec(0); resetLap() }}
-                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full"> Reset</button>
+                                    className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full"> Reset</button>
                             </div>
                         </div>
 
 
-                        <div className="h-3/5 lg:h-44 ml-4 lg:ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll mt-3" >
+                        <div className="h-3/5 lg:h-44 ml-6 lg:ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll mt-3" >
 
 
 
@@ -93,12 +93,12 @@ const StopWatch = () => {
                                     return (
                                         <>
                                             <div className="flex flex-row ">
-                                                <div className=" px-1 lg:px-2">{++count}</div>
+                                                <div className=" px-1 lg:px-2">{++count<10? "0"+count:count}</div>
                                                 <div className="px-1 lg:px-2">{("0" + Math.floor((lap.lap / 60000) % 60)).slice(-2)}:
                                                     {("0" + Math.floor((lap.lap / 1000) % 60)).slice(-2)}:
 
                                                     {("0" + ((lap.lap / 10) % 100)).slice(-2)}</div>
-                                                <div className="px-1 lg:pl-2">{lap.time}</div>
+                                                <div className="pl-1 lg:pl-2">{lap.time}</div>
                                             </div>
                                             
 

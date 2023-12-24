@@ -8,17 +8,17 @@ const About = () =>{
     <div className="fixed right-6 bottom-3">
         
     <div className='flex flex-row gap-6 justify-center p-5'>
-    <div className="px-3 text-lg bold">
+    <div className="px-3 text-sm bold">
             Visit My Profile: 
         </div>
                                         <a href='https://instagram.com/cool_deep_96?igshid=NTc4MTIwNjQ2YQ=='>
-                                            <img className="h-8 w-8 grayscale hover:grayscale-0 transition duration-1000 " src={instagram} alt="instagram" />
+                                            <img className="h-5 w-5 grayscale hover:grayscale-0 transition duration-1000 " src={instagram} alt="instagram" />
                                         </a>
                                         <a href='https://www.linkedin.com/in/cool-deep96/'>
-                                            <img className="h-8 w-8 grayscale hover:grayscale-0 transition duration-1000 " src={linkedin} alt="linkedin" />
+                                            <img className="h-5 w-5 grayscale hover:grayscale-0 transition duration-1000 " src={linkedin} alt="linkedin" />
                                         </a>
                                         <a href='https://www.linkedin.com/in/cool-deep96/'>
-                                            <img className="h-8 w-8 grayscale hover:grayscale-0 transition duration-1000 " src={linkedin} alt="linkedin" />
+                                            <img className="h-5 w-5 grayscale hover:grayscale-0 transition duration-1000 " src={linkedin} alt="linkedin" />
                                         </a>
 
 
