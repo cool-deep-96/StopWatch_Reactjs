@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { StopWatchStore } from "../Zustand/StopWatchStore";
+import About from "./About"
 
 const StopWatch = () => {
     const [start, setStart] = useState(false);
@@ -53,10 +54,10 @@ const StopWatch = () => {
     return (
         <>
             <div className="bg-gray-200 h-screen w-full flex flex-col items-center justify-center">
-                <div className="bg-gray-400 flex flex-col   p-6 h-3/6 ">
+                <div className="bg-gray-400 flex flex-col w-11/12 lg:w-4/12 p-3 lg:p-6 h-3/6 ">
 
 
-                    <div className="  bg-white my-3 text-6xl text-center py-4 min-w-96">
+                    <div className="  bg-white my-3 text-5xl lg:text-6xl text-center py-4 lg:min-w-96">
                         {("0" + Math.floor((milisec / 3600000)) ).slice(-2)}:
                         {("0" + Math.floor((milisec / 60000) % 60)).slice(-2)}:
                         {("0" + Math.floor((milisec / 1000) % 60)).slice(-2)}:
@@ -66,24 +67,24 @@ const StopWatch = () => {
                     </div>
 
 
-                    <div className="flex flex-row my-3 h-full  ">
-                        <div className="w-36">
-                            <div className=" m-2 bg-red-300 ">
+                    <div className="flex flex-row my-6 lg:my-3 h-full  ">
+                        <div className="lg:w-36 w-28">
+                            <div className=" my-4 lg:m-2 bg-red-300 ">
                                 <button onClick={() => { start ? setPause(!pause) : setStart(!start) }}
-                                    className="text-xl text-center px-3 py-2 w-full">{start ? (pause ? 'Resume' : "Pause") : 'Start'}</button>
+                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full">{start ? (pause ? 'Resume' : "Pause") : 'Start'}</button>
                             </div>
-                            <div className=" m-2 bg-red-300">
+                            <div className=" my-4 lg:m-2  bg-red-300">
                                 <button onClick={()=>{addLapHandler()}}
-                                    className="text-xl  text-center px-3 py-2 w-full">Lap</button>
+                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full">Lap</button>
                             </div>
-                            <div className="m-2 bg-red-300">
+                            <div className="my-4 lg:m-2 bg-red-300">
                                 <button onClick={() => { setPause(false); setStart(false); setMilisec(0); resetLap() }}
-                                    className="text-xl  text-center px-3 py-2 w-full"> Reset</button>
+                                    className="text-xl font-semibold text-center px-3 py-3 lg:py-2 w-full"> Reset</button>
                             </div>
                         </div>
 
 
-                        <div className="h-44 ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll" >
+                        <div className="h-3/5 lg:h-44 ml-4 lg:ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll" >
 
 
 
@@ -91,13 +92,13 @@ const StopWatch = () => {
                                 timeLap.map((lap) => {
                                     return (
                                         <>
-                                            <div className="flex flex-row justify-items-end ">
-                                                <div className="px-2">{++count}</div>
-                                                <div className="px-2">{("0" + Math.floor((lap.lap / 60000) % 60)).slice(-2)}:
+                                            <div className="flex flex-row ">
+                                                <div className=" px-1 lg:px-2">{++count}</div>
+                                                <div className="px-1 lg:px-2">{("0" + Math.floor((lap.lap / 60000) % 60)).slice(-2)}:
                                                     {("0" + Math.floor((lap.lap / 1000) % 60)).slice(-2)}:
 
                                                     {("0" + ((lap.lap / 10) % 100)).slice(-2)}</div>
-                                                <div className="pl-2">{lap.time}</div>
+                                                <div className="px-1 lg:pl-2">{lap.time}</div>
                                             </div>
                                             
 
@@ -116,6 +117,7 @@ const StopWatch = () => {
 
 
                 </div>
+                <About/>
 
             </div>
         </>
