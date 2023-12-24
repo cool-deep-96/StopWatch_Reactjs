@@ -84,7 +84,7 @@ const StopWatch = () => {
                         </div>
 
 
-                        <div className="h-3/5 lg:h-44 ml-4 lg:ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll" >
+                        <div className="h-3/5 lg:h-44 ml-4 lg:ml-8 overflow-scroll overflow-hidden overflow-x-hidden custom-scroll mt-3" >
 
 
 
