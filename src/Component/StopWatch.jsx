@@ -1,11 +1,16 @@
+import soundClick from '../assets/Sounds/ui-click-43196.mp3'
 import React, { useEffect, useRef, useState } from "react";
 import { StopWatchStore } from "../Zustand/StopWatchStore";
-import About from "./About"
+import About from "./About";
+import useSound from "use-sound";;
+
+
 
 const StopWatch = () => {
     const [start, setStart] = useState(false);
     const [milisec, setMilisec] = useState(0);
     const [pause, setPause] = useState(false);
+    const [play] = useSound(soundClick)
 
     const timeLap = StopWatchStore((state) => state.timeLap);
     const addLap = StopWatchStore((state) => state.addLap);
@@ -70,15 +75,15 @@ const StopWatch = () => {
                     <div className="flex flex-row my-6 lg:my-3 h-full  ">
                         <div className="lg:w-36 w-20">
                             <div className=" my-4 lg:m-2 bg-red-300 ">
-                                <button onClick={() => { start ? setPause(!pause) : setStart(!start) }}
+                                <button onClick={() => { start ? setPause(!pause) : setStart(!start); play() }}
                                     className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full">{start ? (pause ? 'Resume' : "Pause") : 'Start'}</button>
                             </div>
                             <div className=" my-4 lg:m-2  bg-red-300">
-                                <button onClick={()=>{addLapHandler()}}
+                                <button onClick={()=>{addLapHandler(); play()}}
                                     className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full">Lap</button>
                             </div>
                             <div className="my-4 lg:m-2 bg-red-300">
-                                <button onClick={() => { setPause(false); setStart(false); setMilisec(0); resetLap() }}
+                                <button onClick={() => { setPause(false); setStart(false); setMilisec(0); resetLap(); play() }}
                                     className="text-lg font-semibold text-center px-3 py-3 lg:py-2 w-full"> Reset</button>
                             </div>
                         </div>
