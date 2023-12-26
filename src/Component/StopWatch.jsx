@@ -58,8 +58,8 @@ const StopWatch = () => {
 
     return (
         <>
-            <div className="bg-gray-200 h-screen w-full flex flex-col items-center justify-center">
-                <div className="bg-gray-400 flex flex-col w-11/12 lg:w-4/12 p-3 lg:p-6 h-3/6 ">
+            <div className="bg-gray-200  h-screen lg:h-screen w-full flex flex-col items-center justify-center">
+                <div className="bg-gray-400 min-h-max flex flex-col w-11/12 lg:w-4/12 p-3 lg:p-6 h-3/6 ">
 
 
                     <div className="  bg-white my-3 text-5xl lg:text-6xl text-center py-4 lg:min-w-96">
@@ -97,7 +97,7 @@ const StopWatch = () => {
                                 timeLap.map((lap) => {
                                     return (
                                         <>
-                                            <div className="flex flex-row ">
+                                            <div className="flex flex-row text-sm ">
                                                 <div className=" px-1 lg:px-2">{++count<10? "0"+count:count}</div>
                                                 <div className="px-1 lg:px-2">{("0" + Math.floor((lap.lap / 60000) % 60)).slice(-2)}:
                                                     {("0" + Math.floor((lap.lap / 1000) % 60)).slice(-2)}:
